@@ -1,0 +1,28 @@
+def nth_prime(prime_position)
+  counter = 2
+  prime_numbers = []
+
+  until prime_numbers.length > prime_position do
+    if is_prime(counter)
+      prime_numbers << counter
+    end 
+    counter += 1 
+  end
+
+  if prime_numbers.length - 1 == prime_position
+    puts prime_numbers[prime_position - 1]
+  end
+
+end
+
+def is_prime(counter)
+  #puts counter
+  range = (2..counter).to_a
+  range.each do |current_number| 
+    range.reject!{|num| num % current_number == 0 && num != current_number}
+  end
+  return range.include?counter
+
+end
+
+nth_prime(5)
