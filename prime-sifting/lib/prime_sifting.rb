@@ -19,4 +19,4 @@ def prime_sifting(number_input)
 end
 
 
-prime_sifting(14)
+prime_sifting(1400)
